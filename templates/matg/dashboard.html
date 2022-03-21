@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zxx">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href='{% static "asserts/css/bootstrap.min.css" %}'>
+  <link rel="stylesheet" href='{% static "asserts/css/main.css" %}'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+ 
+  <header class="navbaground">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="#" ><img src='{% static "images/logom.png" %}' style="width: 65px;height: 65px;position: absolute;" /><h2 style="color: antiquewhite;margin-left: 60px;margin-top: 7px;">AT-G</h2></a>
+      <button class="navbar-toggler btn-primary" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <form class="form-inline my-2 my-lg-0 ml-5 d-none d-sm-block">
+          <input class="form-control mr-sm-2 ml-5" type="search" placeholder="Search" aria-label="Search" style="width: 200px;">
+          <button class="btn btn-outline-secondary text-light my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <ul class="navbar-nav ml-auto text-center ">
+          <li class="nav-item active">
+            <a class="nav-link text-light h6 m-2" href="#">Business <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light h6 m-2" href="#">Instructor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light h6 m-2" href="#">My learnings</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link text-light h6 m-2">Categories</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link text-light m-2"><i class="fa fa-cart-plus" style="font-size:26px"></i></a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link text-light m-2"><i class="fa fa-bell-o" style="font-size:26px"></i></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+              {{user}}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Profile</a>
+              <a class="dropdown-item" href="#">Courses</a>
+              <a class="dropdown-item" href="#">Settings</a>
+              <a class="dropdown-item" href="/">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!--caregories section-->
+  <section>
+    <div class="container-fluid" style="background-color: aliceblue;">
+      <div class="container d-none d-sm-block">
+        <ul class=" d-flex flex-row" style="list-style-type:none;">
+          <li class="m-3"> Development</li>
+          <li  class="m-3">Business</li>
+          <li  class="m-3">Finance & Accountings</li>
+          <li  class="m-3">IT & Software</li>
+          <li  class="m-3">office productivity</li>
+          <li  class="m-3">Personal Development</li>
+          <li  class="m-3">Marketing</li>
+        </ul>
+      </div>
+    </div>
+  </section>  
+  <!---learnings-->
+  <section>
+    <div class="container-fluid bg-dark d-none d-sm-block">
+      <div class="container">
+        <h1 style="color: aliceblue;font-family: cursive;" class="mt-4">My Learnings</h1>
+        <ul class=" d-flex flex-row" style="list-style-type:none;">
+          <li class="m-3" style="color: aliceblue;">All cources</li>
+          <li  class="m-3" style="color: aliceblue;">My List</li>
+          <li  class="m-3" style="color: aliceblue;">Wishlist</li>
+          <li  class="m-3" style="color: aliceblue;">Learning tools</li>
+          
+        </ul>
+      </div>
+    </div>
+  </section>
+ <!--coursebar-->
+ <section>
+   <div class="container">
+     <div class="row">
+       <div class="col-sm-3 col-12">
+         <p class="h6">sort by</p>
+         <select class="form-control" id="exampleFormControlSelect1">
+          <option>Recently Accesed</option>
+          <option>Recently Enrolled</option>
+          <option>Title:A-Z</option>
+          <option>Title:Z-A</option>
+          
+        </select>
+       </div>
+      <div class="col-sm-6 col-12">
+        <p class="h6">Filter by</p>
+        <div class="form-group d-flex flex-row">
+          <select class="form-control" id="exampleFormControlSelect1"  placeholder="Categories">
+          <option> All Categories</option>
+          <option> Development</option>
+          <option>  Business</option>
+          <option> IT & Software</option>
+          <option> Marketing</option>
+          <option> Teaching & Academics</option>
+          <option> Design</option>
+          <option>  Personal Development</option>
+          <option> Finance & Accounting</option>
+          <option> Photography & Video</option>
+          <option> Office Productivity</option>
+          </select>
+          
+          <button type="reset" class="btn btn-primary ml-1">Reset</button>
+        </div>
+      </div>
+      <div class="col-sm-3 col-12">
+        <p class="h6">search </p>
+        <div class="form-group d-flex flex-row">
+          <input type="text" placeholder="Search" />
+          <button type="reset" class="btn btn-primary ml-1">Search</button>
+        </div>
+      </div>
+     </div>
+   </div>
+ </section>
+
+  <!--course details-->
+  <section>
+    <div class="container">
+    
+      <div class="row">
+        {% for i in card %}
+        <div class="col-12 col-sm-3">
+          <div class="card ml-1" style="width: 18rem;">
+            <img src={{i.courseimage}} class="card-img-top" alt="..." style="width: 290px;height: 200px;">
+            <div class="card-body" >
+              <h5 class="card-title">{{i.coursetitle}}</h5>
+              <p class="card-text">{{i.aboutcourse}}</p>
+              <a href="#" class="btn btn-primary">Register</a> <span class="h5 ml-3 text-success">{{i.price}}</span>
+            </div>
+          </div>
+          <div class="ml-3 mt-3"></div> 
+        </div> 
+        {% endfor %}
+        
+      </div>
+      
+      
+      
+    
+  </div>
+  </section>
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src='{% static "asserts/js/jquery.min.js" %}'></script>
+<script src='{% static "asserts/js/bootstrap.min.js" %}'></script>
+</body>
+</html>
